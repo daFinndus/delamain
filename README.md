@@ -43,12 +43,10 @@ Microphone (always listening)
 2. **Fuzzy match** - rapidfuzz scores transcript against a list of phrasings
    per action (multiple phrasings + keyword/slot extraction instead of one
    rigid sentence per action).
-3. **LLM fallback** - if no confident match, pass transcript + available
-   actions to a local LLM (or Claude API) to classify intent, or return "none".
 
 ## Open Questions / TODO
 
-- [ ] Decide on Whisper model size (small vs medium) - accuracy vs latency tradeoff
-- [ ] Decide wake word: pre-trained vs custom-trained with openWakeWord
+- [ ] Decide on Whisper model size (small vs medium)
+- [ ] Decide wake word: pre-trained vs custom-trained
 - [ ] Define initial actions.yaml (first batch of commands)
 
