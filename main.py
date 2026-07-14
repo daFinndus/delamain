@@ -1,13 +1,26 @@
+from modules.actions import Actions
 from modules.tts import Piper
-from modules.wakeword import Waker
+
+MODEL = "ryan"
+VOLUME = 0.3
+SPEED = 0.9
+
 
 def main():
-    piper = Piper(model = "ryan", volume = 0.3, speed = 0.9)
+    print("Spinning up Delamain...")
+    print(f"Using model {MODEL} with volume {VOLUME} and a speed of {SPEED}.")
 
-    piper.speak("Hello from Dellamain!")
+    piper = Piper(model=MODEL, volume=VOLUME, speed=SPEED)
+    actions = Actions()
+
+    notification = actions.notify(head="Delamain", body="Now listening...")
+
+    piper.speak("Hello, here is Dellamain!")
     piper.speak("Nice to meet you.")
-    piper.speak("Going to adjust wallpaper...")
 
+    input("Press enter to kill the notification...")
+
+    actions.clear_notification(notification)
 
 
 if __name__ == "__main__":
